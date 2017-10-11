@@ -33,8 +33,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      *
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
-     */
-    {
+     */ {
         persons = new UniquePersonList();
         tags = new UniqueTagList();
     }
@@ -156,6 +155,13 @@ public class AddressBook implements ReadOnlyAddressBook {
         } else {
             throw new PersonNotFoundException();
         }
+    }
+
+    /**
+     * Order list of all persons in the Address Book based on the parameter.
+     */
+    public void orderList(String parameter) {
+        persons.orderBy(parameter);
     }
 
     //// tag-level operations
