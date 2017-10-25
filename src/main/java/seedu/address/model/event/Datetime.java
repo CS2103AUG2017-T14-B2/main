@@ -11,12 +11,13 @@ import seedu.address.commons.exceptions.IllegalValueException;
 public class Datetime {
 
     public static final String MESSAGE_DATETIME_CONSTRAINTS =
-            "Event datetime should only contain alphanumeric characters and spaces, and it should not be blank";
+            "Event datetime should be in dd-mm-yyyy hhmm format";
     /*
      * The first character of the address must not be a whitespace,
      * otherwise " " (a blank string) becomes a valid input.
      */
-    public static final String DATETIME_VALIDATION_REGEX = "[^\\s].*";
+    public static final String DATETIME_VALIDATION_REGEX =
+            "^((0[1-9])|([012][0-9])|(3[01]))-([0]{0,1}[1-9]|1[012])-\\d\\d\\d\\d (([0-1][0-9])|(2[0-3]))[0-5][0-9]$";
 
     public final String value;
 
