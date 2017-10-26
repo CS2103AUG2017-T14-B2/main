@@ -17,7 +17,7 @@ public class Datetime {
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String DATETIME_VALIDATION_REGEX =
-            "\\d{2}-\\d{2}-\\d{4} \\d{4}";
+            "\\d{2}-\\d{2}-\\d{4}\\s\\d{4}";
 
     public final String value;
 
