@@ -17,7 +17,7 @@ public class Datetime {
      * otherwise " " (a blank string) becomes a valid input.
      */
     public static final String DATETIME_VALIDATION_REGEX =
-            "\\d{2}-\\d{2}-\\d{4}[\\s]\\d{4}[\\s]?.*";
+            "((0[1-9])|([012][0-9])|(3[01]))-(0[1-9]|1[012])-\\d{4}[\\s](([0-1][0-9])|(2[0-3]))[0-5][0-9]";
 
     public final String value;
 
@@ -28,10 +28,11 @@ public class Datetime {
      */
     public Datetime(String datetime) throws IllegalValueException {
         requireNonNull(datetime);
-        if (!isValidDatetime(datetime)) {
+        String trimmedDatetime = datetime.trim();
+        if (!isValidDatetime(trimmedDatetime)) {
             throw new IllegalValueException(MESSAGE_DATETIME_CONSTRAINTS);
         }
-        this.value = datetime;
+        this.value = trimmedDatetime;
     }
 
     /**

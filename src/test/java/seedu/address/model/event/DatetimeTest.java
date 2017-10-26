@@ -19,6 +19,5 @@ public class DatetimeTest {
 
         // valid datetime
         assertTrue(Datetime.isValidDatetime("02-09-2017 2015"));
-        assertTrue(Datetime.isValidDatetime("02-09-2017 2015 ")); //with space at the end
     }
 }
