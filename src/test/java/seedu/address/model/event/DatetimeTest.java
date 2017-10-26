@@ -8,7 +8,7 @@ import org.junit.Test;
 public class DatetimeTest {
 
     @Test
-    public void isValidTitle() {
+    public void isValidDatetime() {
         // invalid datetime
         assertFalse(Datetime.isValidDatetime("")); // empty string
         assertFalse(Datetime.isValidDatetime(" ")); // spaces only
@@ -23,6 +23,6 @@ public class DatetimeTest {
         assertFalse(Datetime.isValidDatetime("02-09-2017 2065")); // invalid minute
 
         // valid datetime
-        assertTrue(Datetime.isValidDatetime("02-09-2017 2015")); // invalid minute
+        assertTrue(Datetime.isValidDatetime("02-09-2017 2015"));
     }
 }
