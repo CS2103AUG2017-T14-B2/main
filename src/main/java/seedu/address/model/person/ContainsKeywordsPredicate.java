@@ -33,9 +33,8 @@ public class ContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
         if (predicateType == 'm') {
             return (keywords.stream()
                     .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getAsText(), keyword)));
-        }
-        //@@ author tingtx
-        else if (predicateType == 'g') {
+            //@@ author tingtx
+        } else if (predicateType == 'g') {
             //assert keywords.size() == 1;
             return (person.getGroup().value.equals(keywords.get(0).toString()));
         }
