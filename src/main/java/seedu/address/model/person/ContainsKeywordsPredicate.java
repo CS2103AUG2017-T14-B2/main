@@ -25,12 +25,15 @@ public class ContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
         if (predicateType == 'n') {
             return keywords.stream()
                     .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getName().fullName, keyword));
-        } else if (predicateType == 'a') {
+        }
+        if (predicateType == 'a') {
             return keywords.stream()
                     .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getAddress().value, keyword));
-        } else if (predicateType == 'm') {
+        }
+        if (predicateType == 'm') {
             return (keywords.stream()
                     .anyMatch(keyword -> StringUtil.containsWordIgnoreCase(person.getAsText(), keyword)));
+        }
         //@@ author tingtx
         } else if (predicateType == 'g') {
             //assert keywords.size() == 1;
