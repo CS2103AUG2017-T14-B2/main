@@ -36,6 +36,7 @@ public class ContainsKeywordsPredicate implements Predicate<ReadOnlyPerson> {
         }
         //@@ author tingtx
         else if (predicateType == 'g') {
+            //assert keywords.size() == 1;
             return (person.getGroup().value.equals(keywords.get(0).toString()));
         }
         //@@author
