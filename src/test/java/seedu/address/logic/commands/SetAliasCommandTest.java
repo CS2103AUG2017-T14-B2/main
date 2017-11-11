@@ -219,6 +219,12 @@ public class SetAliasCommandTest {
         }
 
         @Override
+        public void releaseEncryptedContact(String substring) throws DataConversionException, DuplicatePersonException,
+                IOException {
+            fail("This method should not be called.");
+        }
+
+        @Override
         public ObservableList<ReadOnlyPerson> getFilteredPersonList() {
             fail("This method should not be called.");
             return null;
