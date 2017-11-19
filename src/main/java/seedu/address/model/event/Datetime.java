@@ -45,6 +45,12 @@ public class Datetime {
             return false;
         }
 
+        if (test.charAt(2) != '-'
+                || test.charAt(5) != '-'
+                || test.charAt(10) != ' ') {
+            return false;
+        }
+
         try {
             int day = Integer.parseInt(test.substring(0, 2));
             int month = Integer.parseInt(test.substring(3, 5));
